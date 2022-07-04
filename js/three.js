@@ -45,7 +45,7 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 1, 3500 );
+				camera = new THREE.PerspectiveCamera( 47, window.innerWidth / window.innerHeight, 1, 3500 );
 				camera.position.z = 100;
 
 				scene = new THREE.Scene();
@@ -148,8 +148,8 @@
 
 			function onWindowResize() {
 
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
+				windowHalfX = window.innerWidth / 1;
+				windowHalfY = window.innerHeight / 1;
 
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
@@ -163,7 +163,7 @@
 
 				const uvs = geometry.attributes.uv.array;
 
-				for ( let i = 0; i < uvs.length; i += 2 ) {
+				for ( let i = 0; i < uvs.length; i += 1 ) {
 
 					uvs[ i ] = ( uvs[ i ] + offsetx ) * unitx;
 					uvs[ i + 1 ] = ( uvs[ i + 1 ] + offsety ) * unity;
