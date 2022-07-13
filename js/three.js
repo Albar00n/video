@@ -46,12 +46,12 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 47, window.innerWidth / window.innerHeight, 1, 3500 );
-				camera.position.z = 100;
+				camera.position.z = 300;
 
 				scene = new THREE.Scene();
 
 				const light = new THREE.DirectionalLight( 0xffffff );
-				light.position.set( 0.5, 0.5, 1 ).normalize();
+				light.position.set( 0.5, 1.5, 1 ).normalize();
 				scene.add( light );
 
 				renderer = new THREE.WebGLRenderer();
@@ -131,7 +131,7 @@
 				// postprocessing
 
 				const renderModel = new RenderPass( scene, camera );
-				const effectBloom = new BloomPass( 2.4 );
+				const effectBloom = new BloomPass( 5.4 );
 				const effectCopy = new ShaderPass( CopyShader );
 
 				composer = new EffectComposer( renderer );
